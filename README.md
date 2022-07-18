@@ -13,11 +13,13 @@ PRICE float,
 CLEANING_TODAY bit(1));
 
 
+
 create table tbHead
 
 ( HEAD_NAME varchar (50),
 
 HEAD_CPF varchar (11) primary key);
+
 
 
 create table tbResidence
@@ -37,6 +39,7 @@ RESIDENCE_NUMBER float,
 SIZE varchar (1));
 
 
+
 create table tbCleaning
 
 (CLEANING_ID float primary key,
@@ -50,9 +53,11 @@ CLEANER_MISSED bit(1),
 FEEDBACK longtext NULL);
 
 
+
 create table tbPrice
 
 (PRICE_SIZE float primary key);
+
 
 
 
@@ -98,6 +103,7 @@ values (8922,'Deangelo Vickers','32152298776',80.50,0);
 
 
 
+
 insert into tbresidence (RESIDENCE_ID, CITY, HOOD, STREET, COMPLEMENT, RESIDENCE_NUMBER, SIZE)
 
 values (5555,'New York','Brooklyn','St. 01','A',123,'s');
@@ -137,6 +143,7 @@ values (7411,'Chicago','Upper West Side','St. 02','B',753,'m');
 insert into tbresidence (RESIDENCE_ID, CITY, HOOD, STREET, COMPLEMENT, RESIDENCE_NUMBER, SIZE)
 
 values (2956,'New York','Harlem','St. 14','A',772,'s');
+
 
 
 
@@ -182,6 +189,7 @@ values ('Nate Nickerson','03629598715');
 
 
 
+
 insert into tbcleaning (CLEANING_ID, `DATE`, CLEANING_DONE, CLEANER_MISSED, FEEDBACK)
 
 values (1551,"2022-07-03",1,1,"Amazing job, I really recommend, five stars!");
@@ -224,11 +232,13 @@ values (1354,"2022-07-19",1,1,"Amazing job, one hundred millions stars!");
 
 
 
+
 select cleaning_today,
 
 if(cleaning_today = 1, "Yes", "No") as "Already Cleaned Today?"
 
 from tbcleaner;
+
 
 
 select cleaning_done,
@@ -238,11 +248,13 @@ if(cleaning_done = 1, "Yes", "No") as "Will Recieve the Payment?"
 from tbcleaning;
 
 
+
 select cleaner_missed,
 
 if(cleaner_missed = 1, "Yes", "No") as "The Cleaner came?"
 
 from tbcleaning;
+
 
 
 select residence_id, size,
